@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoFlow & Terra | ODS 6 & 15</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .bg-eco-gradient { background: linear-gradient(135deg, #009ade 0%, #4caf50 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <nav class="sticky top-0 z-50 glass border-b border-gray-200 py-4 shadow-sm">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-2 text-2xl font-bold italic text-blue-600">
+                <span class="text-blue-600">Eco</span><span class="text-green-600">Flow</span>
+                <span class="text-gray-400 font-light">& Terra</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#ods" class="hover:text-green-600">As ODS</a>
+                <a href="#solucoes" class="hover:text-green-600">Soluções</a>
+                <a href="#calculadora" class="hover:text-blue-600">Calculadora</a>
+                <button class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition">Agir Agora</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-eco-gradient text-white py-20 px-6 text-center">
+        <div class="container mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Onde a água flui, a vida floresce.</h1>
+            <p class="text-xl mb-10 max-w-2xl mx-auto opacity-90">Unindo a ODS 6 e a ODS 15 para regenerar solos e garantir água pura para as próximas gerações através da tecnologia e natureza.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="bg-white/20 p-4 rounded-lg backdrop-blur-md">
+                    <span class="block text-3xl font-bold">ODS 6</span>
+                    <span class="text-sm">Água e Saneamento</span>
+                </div>
+                <div class="bg-white/20 p-4 rounded-lg backdrop-blur-md">
+                    <span class="block text-3xl font-bold">ODS 15</span>
+                    <span class="text-sm">Vida Terrestre</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="solucoes" class="py-20 container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16 underline decoration-green-500 underline-offset-8">Nossas Soluções</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-blue-500 hover:scale-105 transition">
+                <i class="fa-solid fa-droplet text-4xl text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">EcoFlow: Infiltração</h3>
+                <p class="text-gray-600">Técnicas de Swales e Jardins de Chuva para recarregar o lençol freático e evitar erosão.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-green-500 hover:scale-105 transition">
+                <i class="fa-solid fa-seedling text-4xl text-green-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Terra: Reflorestamento</h3>
+                <p class="text-gray-600">Bombas de sementes e agrofloresta para trazer a biodiversidade de volta ao solo degradado.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-yellow-500 hover:scale-105 transition">
+                <i class="fa-solid fa-microchip text-4xl text-yellow-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Monitoramento Smart</h3>
+                <p class="text-gray-600">Sensores de IoT para medir a saúde do solo e evitar o desperdício hídrico em tempo real.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculadora" class="bg-gray-100 py-20 px-6">
+        <div class="container mx-auto max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-wrap">
+            <div class="md:w-1/2 bg-blue-600 text-white p-10 flex flex-col justify-center">
+                <h2 class="text-3xl font-bold mb-4">Calculadora de Impacto</h2>
+                <p>Descubra quanta água você pode economizar implementando técnicas de cobertura verde no seu solo.</p>
+            </div>
+            <div class="md:w-1/2 p-10">
+                <label class="block mb-2 font-medium">Área do seu terreno (m²)</label>
+                <input type="number" placeholder="Ex: 50" class="w-full p-3 border rounded-lg mb-6 outline-blue-500">
+                
+                <label class="block mb-2 font-medium">Tipo de Solo</label>
+                <select class="w-full p-3 border rounded-lg mb-6">
+                    <option>Degradado (Exposto)</option>
+                    <option>Gramado</option>
+                    <option>Floresta/Agrofloresta</option>
+                </select>
+
+                <button class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg shadow-md">Calcular Economia</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2024 EcoFlow & Terra - Projeto Educativo ODS ONU.</p>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <a href="#" class="hover:text-blue-400"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-blue-400"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="hover:text-blue-400"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

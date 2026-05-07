@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoFlow & Terra | Diagnóstico Ambiental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body { font-family: 'Poppins', sans-serif; }
+        
+        .ods-6 { color: #009ade; }
+        .ods-15 { color: #4caf50; }
+        .bg-gradient-eco { background: linear-gradient(135deg, #009ade 0%, #4caf50 100%); }
+        
+        .card-hover:hover { transform: translateY(-10px); transition: all 0.3s ease; }
+        
+        #result-display { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold flex items-center gap-2">
+                <i class="fa-solid fa-earth-americas ods-15"></i>
+                <span>EcoFlow<span class="ods-6">&Terra</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#home" class="hover:text-blue-600 transition">Início</a>
+                <a href="#ods" class="hover:text-blue-600 transition">ODS</a>
+                <a href="#diagnostico" class="hover:text-blue-600 transition">Diagnóstico</a>
+                <a href="#solucoes" class="hover:text-blue-600 transition">Soluções</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="pt-32 pb-20 px-6 bg-gradient-eco text-white">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">A Saúde da Terra começa no Fluxo da Água.</h1>
+            <p class="text-xl opacity-90 max-w-3xl mx-auto mb-10">
+                Cruzamos dados de umidade do solo, qualidade hídrica e cobertura vegetal para regenerar ecossistemas reais.
+            </p>
+            <a href="#diagnostico" class="bg-white text-green-600 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:bg-gray-100 transition">Fazer Diagnóstico Agora</a>
+        </div>
+    </section>
+
+    <section id="ods" class="py-20 container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Nosso Compromisso 2030</h2>
+                <p class="text-gray-600 mb-6 text-lg">O projeto EcoFlow & Terra utiliza a tecnologia para acelerar o cumprimento de dois objetivos globais da ONU:</p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-100 p-3 rounded-lg"><i class="fa-solid fa-droplet ods-6 text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold ods-6">ODS 6: Água Limpa e Saneamento</h4>
+                            <p class="text-sm text-gray-500">Assegurar a disponibilidade e gestão sustentável da água.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-green-100 p-3 rounded-lg"><i class="fa-solid fa-tree ods-15 text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold ods-15">ODS 15: Vida Terrestre</h4>
+                            <p class="text-sm text-gray-500">Proteger, recuperar e promover o uso sustentável dos ecossistemas terrestres.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-200 h-64 rounded-2xl flex items-center justify-center text-gray-400 italic">
+                <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2015/09/E_SDG_Icons-01.jpg" alt="ODS ONU" class="rounded-2xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <section id="diagnostico" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold">Avaliador de Saúde Ecossistêmica</h2>
+                    <p class="text-gray-500">Insira os dados coletados (manualmente ou via sensores) para processar o diagnóstico.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div>
+                        <label class="block font-bold mb-2">Umidade do Solo (%)</label>
+                        <input type="number" id="input-solo" placeholder="0-100" class="w-full p-3 border rounded-xl outline-green-500">
+                        <p class="text-xs text-gray-400 mt-1">Nível de hidratação da terra.</p>
+                    </div>
+                    <div>
+                        <label class="block font-bold mb-2">Qualidade da Água</label>
+                        <select id="input-agua" class="w-full p-3 border rounded-xl outline-blue-500">
+                            <option value="10">Cristalina / Pura</option>
+                            <option value="5">Turva / Estagnada</option>
+                            <option value="0">Poluída / Seco</option>
+                        </select>
+                        <p class="text-xs text-gray-400 mt-1">Transparência e pureza.</p>
+                    </div>
+                    <div>
+                        <label class="block font-bold mb-2">Cobertura Vegetal</label>
+                        <select id="input-vegetacao" class="w-full p-3 border rounded-xl outline-green-500">
+                            <option value="10">Floresta Densa</option>
+                            <option value="5">Rala / Gramado</option>
+                            <option value="0">Solo Exposto</option>
+                        </select>
+                        <p class="text-xs text-gray-400 mt-1">Densidade de plantas.</p>
+                    </div>
+                </div>
+
+                <button onclick="processarDiagnostico()" class="w-full bg-gradient-eco text-white font-bold py-4 rounded-xl shadow-lg hover:opacity-90 transition">
+                    GERAR DIAGNÓSTICO INTEGRADO
+                </button>
+
+                <div id="result-display" class="mt-10 p-6 rounded-2xl border-2 border-dashed border-gray-300 animate-pulse">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div id="status-icon" class="text-4xl"></div>
+                        <div>
+                            <h3 id="status-titulo" class="text-2xl font-bold"></h3>
+                            <p id="status-pontos" class="font-medium"></p>
+                        </div>
+                    </div>
+                    <p id="status-desc" class="text-gray-600 mb-4"></p>
+                    <div id="status-recomenda" class="bg-white p-4 rounded-lg shadow-inner text-sm font-mono text-green-700"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucoes" class="py-20 container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">Soluções EcoFlow & Terra</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-md card-hover">
+                <i class="fa-solid fa-vial-circle-check text-blue-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Sensores IoT</h3>
+                <p class="text-gray-600">Hardware de baixo custo para monitoramento automático de umidade e pH 24h.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-md card-hover">
+                <i class="fa-solid fa-water text-green-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Swales Regenerativos</h3>
+                <p class="text-gray-600">Canais de infiltração que "plantam" a água da chuva no solo para alimentar árvores.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-md card-hover">
+                <i class="fa-solid fa-hands-holding-seedling text-orange-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Bombas de Sementes</h3>
+                <p class="text-gray-600">Solução para reflorestamento rápido de áreas de difícil acesso e solo degradado.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">© 2024 EcoFlow & Terra - Tecnologia a serviço da vida.</p>
+            <div class="mt-4 flex justify-center gap-6">
+                <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function processarDiagnostico() {
+            const solo = parseFloat(document.getElementById('input-solo').value) || 0;
+            const agua = parseFloat(document.getElementById('input-agua').value);
+            const veg = parseFloat(document.getElementById('input-vegetacao').value);
+
+            // Lógica de Cruzamento: Normaliza solo para escala de 10
+            const soloScore = solo / 10; 
+            const mediaFinal = (soloScore + agua + veg) / 3;
+
+            const display = document.getElementById('result-display');
+            const titulo = document.getElementById('status-titulo');
+            const pontos = document.getElementById('status-pontos');
+            const desc = document.getElementById('status-desc');
+            const recomenda = document.getElementById('status-recomenda');
+            const icon = document.getElementById('status-icon');
+
+            display.style.display = 'block';
+            display.classList.remove('animate-pulse');
+
+            if(mediaFinal >= 7.5) {
+                titulo.innerText = "Ecossistema Vibrante";
+                titulo.className = "text-2xl font-bold text-green-600";
+                icon.innerHTML = "🌳";
+                desc.innerText = "Excelente equilíbrio entre ODS 6 e 15. O solo retém água e a vegetação está protegendo o ciclo hídrico.";
+                recomenda.innerText = "> Recomendação: Preservação e coleta de sementes nativas.";
+            } else if (mediaFinal >= 4.5) {
+                titulo.innerText = "Ecossistema em Recuperação";
+                titulo.className = "text-2xl font-bold text-yellow-600";
+                icon.innerHTML = "🌱";
+                desc.innerText = "Há sinais de degradação. O solo pode estar perdendo água muito rápido ou a vegetação é insuficiente.";
+                recomenda.innerText = "> Recomendação: Implementar Swales (canais de infiltração) e cobertura morta.";
+            } else {
+                titulo.innerText = "ZONA DE ALERTA CRÍTICO";
+                titulo.className = "text-2xl font-bold text-red-600";
+                icon.innerHTML = "⚠️";
+                desc.innerText = "Risco alto de desertificação. Baixa umidade e solo exposto impedem que a água limpa se mantenha no sistema.";
+                recomenda.innerText = "> Recomendação: Intervenção urgente com bombas de sementes e barreiras de erosão.";
+            }
+
+            pontos.innerText = "Score de Saúde: " + mediaFinal.toFixed(1) + " / 10";
+            
+            // Scroll suave para o resultado
+            display.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
